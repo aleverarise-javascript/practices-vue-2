@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola mundo VueJs</title>
+
+	<style>
+		.like{
+			background: green;
+			color: white;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="app">{{ texto }}</div>
+	<div id="app1">{{ texto }}</div>
+		
+	<main>
+		
+		<h2>{{nombreYapellidos}}</h2>
+
+
+		<h2>Listado de peliculas ordenado</h2>
+		<input type="search" v-model="buscar" placeholder="Buscar Pelicula">
+		<ol v-if="peliculas">
+			<li v-on:click="marcar(key)" v-bind:class="{like: key == confirmado}" v-for="(value, key, index) in buscarPelicula">
+				{{ value.nombre | mayusculas }} 
+				<button @click="borrarPelicula(key)">Borrar Pelicula</button>
+			</li>
+		</ol>
+
+		<form v-on:submit.prevent="crearPelicula" >
+			<input type="text" v-model="peliculaNueva">
+			<input type="submit" value="Guardar">
+		</form>
+		<br>
+
+		<hr>
+
+		<h2>Listado por ajax</h2>
+		<ol v-if="posts">
+			<li v-for="post in posts">
+				{{ post.title }}
+			</li>
+		</ol>
+		<span v-else>Cargando Listado...</span>
+
+
+
+		<!-- <button v-on:click="crearPelicula()">Crear Pelicula</button>
+		<button @click="borrarPelicula()">Borrar Pelicula</button> -->
+	</main>
+
+	<script src="../../vue.min.js"></script>
+	<script src="../../vue-filter.min.js"></script>
+	<script src="../../axios.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola mundo VueJs</title>
+</head>
+<body>
+	
+	<main>
+		<ol>
+			<li v-for="(value, key, index) in superfruta">
+				{{ index }} {{ key }} {{ value }}
+			</li>
+		</ol>
+	</main>
+
+	<script src="../../vue.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

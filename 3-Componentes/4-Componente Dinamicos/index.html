@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola mundo VueJs</title>
+
+</head>
+<body>
+	
+	<main>
+		
+		<button v-on:click="elegido = 'articulos'"> Cambiar a componente articulos</button>
+		<button v-on:click="elegido = 'frutas'"> Cambiar a componente frutas</button>
+		<button v-on:click="elegido = 'padre'"> Cambiar a componente padre</button>
+		<button v-on:click="elegido = 'hijo'"> Cambiar a componente hijo</button>
+
+		<h1>COMPONENTES DINAMICOS</h1>
+		<component :is="elegido"></component>	
+
+		<hr>
+	</main>
+
+	<script src="../../vue.min.js"></script>
+	<script src="../../vue-filter.min.js"></script>
+	<script src="../../axios.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

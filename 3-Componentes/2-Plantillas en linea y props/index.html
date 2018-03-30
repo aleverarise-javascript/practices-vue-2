@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola mundo VueJs</title>
+
+</head>
+<body>
+	
+	<main>
+		<frutas :objeto="superfruta" inline-template>
+			<div>
+				<h3>{{ objeto.titulo }}</h3>
+			</div>
+		</frutas>
+		<articulos></articulos>
+	</main>
+
+	<script src="../../vue.min.js"></script>
+	<script src="../../vue-filter.min.js"></script>
+	<script src="../../axios.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>

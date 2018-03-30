@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola mundo VueJs</title>
+</head>
+<body>
+	
+	<main>
+		
+		<h2>{{nombreYapellidos}}</h2>
+
+
+		<h2>Listado de peliculas ordenado</h2>
+		<ol v-if="peliculas">
+			<li v-for="(value, key, index) in peliculasOrdenadas">
+				{{ value }} 
+				<button @click="borrarPelicula(key)">Borrar Pelicula</button>
+			</li>
+		</ol>
+
+		<form v-on:submit.prevent="crearPelicula" >
+			<input type="text" v-model="peliculaNueva">
+			<input type="submit" value="Guardar">
+		</form>
+		<br>
+
+		<!-- <button v-on:click="crearPelicula()">Crear Pelicula</button>
+		<button @click="borrarPelicula()">Borrar Pelicula</button> -->
+	</main>
+
+	<script src="../../vue.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
